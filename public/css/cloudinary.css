@@ -1,0 +1,30 @@
+#cloudinary-overlay.modal {
+    background-color: rgba(0,0,0,.7);
+}
+   .button 
+   {background:#e23400!important;}
+   .widget .header .sources .source.active {
+    background-color: #e23400;
+    border-right:none;
+    }
+    .widget .header{
+      border-color:#e23400;
+      
+    }
+    .widget .panel.local .drag_area {
+      height: 325px;
+      border: 2px dashed #e23400;
+      background-color: transperant;
+      margin: 60px;
+  }
+  span{
+    color:#25292E !important;
+  }
+  .widget{
+    border:none;
+    background-color: #25292E;
+  }
+  .widget .header .close{
+    color:#e23400;
+    text-shadow:none;
+  }

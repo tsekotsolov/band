@@ -1,0 +1,758 @@
+@import'../bootstrap/scss/bootstrap';
+@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@font-face {
+    font-family: "Crucifixion";
+    src: url(https://res.cloudinary.com/tsekotsolov/raw/upload/v1534097850/band/Crucifixion-Regular.ttf);
+}
+
+$primary-color:#e23400;
+$text-color:#fff;
+$background-color:#25292E;
+//some custom button styles
+.btn-custom {
+    background: $primary-color;
+    border-radius: 0;
+    color: $text-color;
+    cursor: pointer;
+    &:hover {
+        background: $text-color;
+        color: $primary-color !important;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.a-custom-nav {
+    border-radius: 0;
+    color: $primary-color;
+    cursor: pointer;
+    &:hover {
+        background: $primary-color;
+        color: $text-color
+    }
+}
+
+form {
+    padding: 1%;
+    .custom-input {
+        width: 85%;
+        margin: 0 auto;
+        padding: 14px
+    }
+    a,
+    a:hover {
+        color: $primary-color;
+    }
+    .form-control {
+        border: solid transparent;
+    }
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border: solid $primary-color;
+        outline: none;
+    }
+    #userHelp {
+        text-align: end;
+        margin-right: 10%;
+    }
+    .disabled-button {
+        pointer-events: none !important;
+        opacity: 0.5;
+    }
+    .error-message {
+        color: red;
+        font-size: 1.1rem;
+    }
+}
+
+.loader-wrapper {
+    position: absolute;
+    top: 38vh;
+    left: 33vw;
+    z-index: 100;
+    width: 35vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    border: 12px solid white;
+    border-top: 12px solid $primary-color;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+.loader-wrapper-small {
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-small {
+    border: 12px solid white;
+    border-top: 12px solid $primary-color;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.password-wrapper {
+    position: relative;
+    color: grey;
+}
+
+.btn-show-pass {
+    position: absolute;
+    top: 20%;
+    right: 12%;
+    :hover {
+        color: red;
+        cursor: pointer;
+    }
+}
+
+.form-row {
+    background-color: #333;
+    border-radius: 15px;
+    padding: 0px;
+}
+
+.forms {
+    position: fixed;
+    left: 50%;
+    top: 15vh;
+    transform: translate(-50%, 0);
+    z-index: 30;
+}
+
+.profile-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form-group{
+        flex-basis: 100%;
+    }
+}
+
+.red{
+    border: solid 2px red !important;
+    color: red!important;
+}
+.green {
+    border: solid 2px green!important;
+    color:green!important;
+}
+
+.close {
+    cursor: pointer;
+    color: $primary-color !important;
+    font-size: 2rem;
+    text-shadow: none;
+    z-index: 30;
+    opacity: 1;
+    outline: none !important;
+    &:visited {
+        color: $primary-color !important;
+    }
+    &:hover {
+        color: white !important;
+    }
+}
+
+.shade-wrapper {
+    background-color: rgba(0, 0, 0, .75);
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+}
+
+.band-picture {
+    background-image: url('https://res.cloudinary.com/tsekotsolov/image/upload/v1532758646/band/form-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+        color: #e23400;
+        margin: 0;
+    }
+    p {
+        text-shadow: 2px 2px #333;
+    }
+}
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.09);
+}
+
+//custom button styles ends here 
+.navbar,
+.navbar-expand-sm {
+    background-color: $background-color !important;
+    padding: 18px;
+}
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255, 255, 255, .5);
+    border-color: $primary-color;
+    outline: none;
+}
+
+.nav-item {
+    text-transform: uppercase;
+    font-weight: 400;
+    .nav-link {
+        border-radius: 0;
+        color: $text-color !important;
+        cursor: pointer;
+        &:hover {
+            background: $primary-color;
+            color: $text-color;
+        }
+    }
+}
+
+.show-on-mobile-only {
+    display: none;
+}
+
+.login-user {
+    display: flex;
+    align-items: center;
+    a {
+        color: $text-color;
+    }
+    .a-custom-nav-login:before {
+        font-family: FontAwesome, sans-serif;
+        content: '\f090';
+        padding-right: 5px;
+    }
+    .a-custom-nav-logout:before {
+        font-family: FontAwesome, sans-serif;
+        content: '\f08b';
+        padding-right: 5px;
+    }.a-custom-nav-logout:before {
+        font-family: FontAwesome, sans-serif;
+        content: '\f08b';
+        padding-right: 5px;
+    }
+    .a-custom-nav-album:before {
+        font-family: FontAwesome, sans-serif;
+        content: '\f067';
+        padding-right: 5px;
+    }
+    .a-custom-nav-users:before {
+        font-family: FontAwesome, sans-serif;
+        content: '\f0c0';
+        padding-right: 5px;
+    }
+    .a-custom-nav-profile:before {
+        font-family: FontAwesome, sans-serif;
+        content: '\f007';
+        padding-right: 5px;
+    }
+
+}
+
+.dropdown-menu {
+    background-color: $background-color;
+    a {
+        height: 100%;
+    }
+}
+
+.dropdown-toggle {
+    background-color: #e23400;
+    color: white;
+    outline: none;
+}
+
+.navbar-brand {
+    font-family: 'Crucifixion';
+    color: $primary-color !important;
+    font-style: italic;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+body {
+    background-color: $background-color;
+    color: $text-color
+}
+
+h2 {
+    font-family: 'Crucifixion';
+    font-style: italic;
+    letter-spacing: 10px;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 22px auto;
+}
+
+h4 {
+    font-family: 'Crucifixion';
+    letter-spacing: 7px;
+    font-style: italic;
+    margin: 5%;
+}
+
+.flex-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    margin-top: 61px;
+    background-image: url('https://res.cloudinary.com/tsekotsolov/image/upload/v1531585863/band/hero-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    h1 {
+        font-family: 'Crucifixion';
+        color: $primary-color;
+        font-style: italic;
+    }
+}
+
+.about-image {
+    background-image: url('https://res.cloudinary.com/tsekotsolov/image/upload/v1531585865/band/about-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.about,
+.albums,
+.album,
+.profile,
+.not-found {
+    margin-top: 14vh;
+    padding-bottom:14vh;
+    text-align: center;
+}
+
+.not-found{
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Crucifixion';
+    letter-spacing: 4vw;
+}
+
+.wrapper-about-p {
+    padding: 20px;
+}
+
+.card h5 {
+    color: $primary-color;
+    text-transform: uppercase;
+}
+
+.card {
+    margin: 10px;
+    overflow: hidden;
+    background-color: $background-color;
+    padding: 0px;
+    font-size: 0.8rem;
+    .card-img-overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .btn-card {
+        align-self: center;
+    }
+}
+
+.parallax {
+    background-image: url('../img/parallax.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 35vmax;
+    z-index: -5;
+}
+
+.music {
+    background: #333;
+    padding: 25px;
+    margin-top: 10px;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, .5);
+}
+
+// Albums section
+.con {
+    position: relative;
+    width: 50%;
+    padding: 0;
+    margin: 0.5%;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(226, 52, 0, 0.7);
+}
+
+.con:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.album{
+    .track-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        
+        .tracks {
+            text-align: left;
+        }
+    }
+
+    p{
+       
+        span {
+            background: $primary-color;
+            padding: 1%;
+        }
+    }
+    
+    .overflow{
+        overflow-y:scroll; 
+        height:60vh;
+        margin-bottom: 10vh;
+        
+    }
+    h5{
+        color:white;
+        text-align:left;
+    }
+}
+
+.modal-body, .modal-header{
+    background:$background-color;
+}
+
+
+::-webkit-scrollbar{
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: red; 
+    border-radius:6px;
+}
+
+#avatar{
+    width:200px;
+    text-align: center;
+    margin:10% auto;
+    img{
+        width:100%;
+    }
+}
+.comment{
+   border-radius:10px;
+   background-color:$background-color;
+   margin:2%;
+
+   .image-content{
+        display:flex;
+        align-items: center;
+   }
+
+    .avatar{
+        width:75px;
+        margin:2%;
+        img{
+            width:100%;
+        }
+    }
+    .post-content{
+        width:100%;
+        text-align:left;
+        a{
+            display:none;
+        }
+    }
+
+    textarea{
+        width:98%;
+        resize:none;
+        border:none;
+
+        &:focus{
+            outline:none;
+        }
+    }
+    .psuedo-textarea{   
+        
+        background: transparent;
+        
+        color:white;
+        
+    }
+    .psuedo-textarea-edit{
+        background: white;
+        color:black;
+    }
+    .controls{
+        a{
+            color:$primary-color;
+            margin: 0.5%; 
+        }
+        text-align:right;
+        padding: 0.5%
+    }
+    .info{
+        font-style: italic;
+        font-size:0.8rem;
+        padding: 1.5vh
+    }
+
+    .modal-footer{
+        background-color: $background-color
+    }
+
+    
+}
+
+
+footer {
+    background-color: #333;
+    .row {
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+        p,
+        ul {
+            a {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                margin: 10px;
+                vertical-align: middle;
+                transition: all .3s;
+                -o-transition: all .3s;
+                -moz-transition: all .3s;
+                -webkit-transition: all .3s;
+                -ms-transition: all .3s;
+                color: transparent;
+            }
+            .facebook {
+                background: url('https://res.cloudinary.com/tsekotsolov/image/upload/v1531585863/band/facebook.png') left top no-repeat;
+            }
+            .twitter {
+                background: url('https://res.cloudinary.com/tsekotsolov/image/upload/v1531585864/band/twitter.png') left top no-repeat;
+            }
+            .google {
+                background: url('https://res.cloudinary.com/tsekotsolov/image/upload/v1531585863/band/googleplus.png') left top no-repeat;
+            }
+            .youtube {
+                background: url('https://res.cloudinary.com/tsekotsolov/image/upload/v1531585864/band/youtube.png') left top no-repeat;
+            }
+            a:hover,
+            a:active {
+                background-position: left -34px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .about {
+        position: relative;
+    }
+    .absolute {
+        position: absolute;
+        top: 309px;
+        left: calc(50% - 570px);
+        z-index: 1;
+    }
+    .our-music {
+        z-index: 5;
+        margin-top: -150px;
+    }
+    footer {
+        height: 7vh;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .about {
+        position: relative;
+    }
+    .absolute {
+        position: absolute;
+        top: 360px;
+        left: calc(50% - 480px);
+        z-index: 1;
+    }
+    .card {
+        margin: 1px;
+    }
+    footer .row {
+        justify-content: center;
+        flex-direction: column;
+        p,
+        ul {
+            margin: 0;
+        }
+    }
+    .band-picture {
+        display: none;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .about {
+        position: static;
+    }
+    .absolute {
+        position: static;
+        z-index: 1;
+    }
+    .parallax {
+        display: none;
+    }
+    form {
+        .custom-input {
+            margin: 0 auto;
+            padding: 2%;
+        }
+        p {
+            display: none;
+        }
+        h4 {
+            margin: 1%;
+        }
+        .m-2 {
+            margin: 0 auto !important;
+        }
+    }
+    .hero h1 {
+        font-size: 5rem;
+    }
+    body {
+        margin-bottom: 15%;
+        margin-top: 15%;
+    }
+    h2 {
+        margin: 0 auto;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .card-img-overlay {
+        padding: 7px;
+        h4 {
+            font-weight: bold;
+        }
+        * {
+            font-size: 15px;
+        }
+    }
+    .card.text-white {
+        margin: 2px;
+    }
+    .login-user {
+        display: none;
+    }
+    .show-on-mobile-only {
+        display: block;
+        font-style: italic;
+        font-size: 0.8rem;
+        &::before {
+            font-family: FontAwesome, sans-serif;
+            padding-right: 5px;
+        }
+    }
+    .a-custom-nav-logout::before {
+        content: '\f08b';
+    }
+    .a-custom-nav-login::before {
+        content: '\f090';
+    }
+    .a-custom-nav-profile::before {
+        content: '\f090';
+    }
+    
+
+    body {
+        margin-bottom: 20%;
+    }
+}
+

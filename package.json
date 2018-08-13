@@ -1,0 +1,22 @@
+{
+  "name": "band",
+  "version": "0.1.0",
+  "private": true,
+  "homepage":"https://tsekotsolov.github.io/The-Band/",
+  "dependencies": {
+    "cloudinary-react": "^1.0.6",
+    "gh-pages": "^1.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "url-parse": "^1.4.3"
+  },
+  "scripts": {
+    "deploy":"npm run build&&gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
