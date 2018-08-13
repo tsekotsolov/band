@@ -31,7 +31,7 @@ class Users extends Component {
 
             {this.state.users.map((user) => {
               return (
-                <User {...user} />
+                <User {...user} key={user._id}/>
               )
             })}
 

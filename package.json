@@ -2,6 +2,7 @@
   "name": "band",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://tsekotsolov.github.io/band/",
   "dependencies": {
     "cloudinary-react": "^1.0.6",
     "gh-pages": "^1.2.0",
