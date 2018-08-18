@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import requester from '../../utils/requester'
 import observer from '../../utils/observer'
 import {Link} from 'react-router-dom'
+import escapeHtml from '../../utils/escapeHtml'
 
 export default class CommentForm extends Component {
 
@@ -27,7 +28,7 @@ export default class CommentForm extends Component {
         this.setState({
           data:{
             author:localStorage.getItem('username'),
-            content:event.target.value,
+            content:escapeHtml(event.target.value),
             postId:this.props.postId
           }
         })

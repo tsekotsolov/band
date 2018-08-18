@@ -20,15 +20,6 @@ let Navigation = (props) => {
           <li className='nav-item'>
             <Link to='/albums' className='nav-link  a-custom-nav'>Albums</Link>
           </li>
-
-          {localStorage.getItem('authToken') && localStorage.username !== 'defaultUser'
-            ? <li className='nav-item'>
-              <Link to='/' className='nav-link  a-custom-nav-logout a-custom-nav show-on-mobile-only' onClick={props.logout}>Logout</Link>
-            </li>
-            : <li className='nav-item'>
-              <Link to='#' className='nav-link  a-custom-nav-login a-custom-nav show-on-mobile-only' onClick={props.showHideForms.showLoginForm}>Login</Link>
-            </li>}
-
         </ul>
       </div>
       <UserButtons {...props} />

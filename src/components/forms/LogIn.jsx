@@ -119,7 +119,7 @@ class LogInForm extends Component {
         <Link to='#' onClick={this.submit} className='btn btn-custom hvr-grow m-2 disabled-button' id="submit">Submit</Link>
         <div className='m-2'>
           <small>Don't have an account?
-          <Link to='#' className='p-2'  onClick={this.props.switchForms}>Sign In</Link>
+          <Link to='#' className='p-2'  onClick={this.props.switchForms}>Sign Up</Link>
           </small>
         </div>
       </form>

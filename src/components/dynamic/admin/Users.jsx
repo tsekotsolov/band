@@ -14,9 +14,8 @@ class Users extends Component {
   componentDidMount () {
     observer.trigger('loading')
     requester.fetchAllUsers().then((response) => {
-      console.log(response)
       this.setState({
-        users: response
+        users: response.filter((user) => user.username !== 'defaultUser')
       })
       observer.trigger('loading')
     })
@@ -31,7 +30,7 @@ class Users extends Component {
 
             {this.state.users.map((user) => {
               return (
-                <User {...user} key={user._id}/>
+                <User {...user} key={user._id} />
               )
             })}
 

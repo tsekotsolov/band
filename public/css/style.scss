@@ -70,8 +70,8 @@ form {
 }
 
 .loader-wrapper {
-    position: absolute;
-    top: 38vh;
+    position: fixed;
+    top: 40%;
     left: 33vw;
     z-index: 100;
     width: 35vw;
@@ -91,8 +91,6 @@ form {
 }
 
 .loader-wrapper-small {
-    
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,22 +143,23 @@ form {
     z-index: 30;
 }
 
-.profile-form{
+.profile-form {
     display: flex;
     align-items: center;
     justify-content: center;
-    .form-group{
+    .form-group {
         flex-basis: 100%;
     }
 }
 
-.red{
+.red {
     border: solid 2px red !important;
-    color: red!important;
+    color: red !important;
 }
+
 .green {
-    border: solid 2px green!important;
-    color:green!important;
+    border: solid 2px green !important;
+    color: green !important;
 }
 
 .close {
@@ -271,7 +270,8 @@ form {
         font-family: FontAwesome, sans-serif;
         content: '\f08b';
         padding-right: 5px;
-    }.a-custom-nav-logout:before {
+    }
+    .a-custom-nav-logout:before {
         font-family: FontAwesome, sans-serif;
         content: '\f08b';
         padding-right: 5px;
@@ -291,7 +291,6 @@ form {
         content: '\f007';
         padding-right: 5px;
     }
-
 }
 
 .dropdown-menu {
@@ -365,17 +364,21 @@ h4 {
     height: 400px;
 }
 
+#root {
+    height: -webkit-fill-available;
+}
+
 .about,
 .albums,
 .album,
 .profile,
 .not-found {
     margin-top: 14vh;
-    padding-bottom:14vh;
+    padding-bottom: 14vh;
     text-align: center;
 }
 
-.not-found{
+.not-found {
     height: 85vh;
     display: flex;
     align-items: center;
@@ -441,7 +444,7 @@ h4 {
     height: auto;
 }
 
-.overlay {
+.overlay, .banned {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -454,8 +457,26 @@ h4 {
     background-color: rgba(226, 52, 0, 0.7);
 }
 
+.banned {
+    p{
+        font-size: 2rem;
+        transform: rotate(-30deg);
+    }
+}
+
 .con:hover .overlay {
     opacity: 1;
+}
+
+.cont{
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0.5%;
+}
+
+.cont .banned {
+    opacity: 1
 }
 
 .text {
@@ -470,126 +491,124 @@ h4 {
     text-align: center;
 }
 
-.album{
+.album {
     .track-container {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        
         .tracks {
             text-align: left;
         }
     }
-
-    p{
-       
+    p {
         span {
             background: $primary-color;
             padding: 1%;
         }
     }
-    
-    .overflow{
-        overflow-y:scroll; 
-        height:60vh;
+    .overflow {
+        overflow-y: scroll;
+        height: 60vh;
         margin-bottom: 10vh;
+    }
+    h5 {
+        color: white;
+        text-align: left;
+    }
+}
+
+.tracks{
+    width:60%;
+        margin:auto;
+    li{
+        background-color:$background-color;
+        text-align: left;
         
-    }
-    h5{
-        color:white;
-        text-align:left;
+        span{
+            cursor:pointer;
+            float:right;
+        }
     }
 }
-
-.modal-body, .modal-header{
-    background:$background-color;
+.modal-body,
+.modal-header {
+    background: $background-color;
 }
 
-
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 4px;
 }
 
-::-webkit-scrollbar-thumb{
-    background: red; 
-    border-radius:6px;
+::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 6px;
 }
 
-#avatar{
-    width:200px;
+#avatar {
+    width: 200px;
     text-align: center;
-    margin:10% auto;
-    img{
-        width:100%;
+    margin: 10% auto;
+    img {
+        width: 100%;
     }
 }
-.comment{
-   border-radius:10px;
-   background-color:$background-color;
-   margin:2%;
 
-   .image-content{
-        display:flex;
+.comment {
+    border-radius: 10px;
+    background-color: $background-color;
+    margin: 2%;
+    .image-content {
+        display: flex;
         align-items: center;
-   }
-
-    .avatar{
-        width:75px;
-        margin:2%;
-        img{
-            width:100%;
+    }
+    .avatar {
+        width: 75px;
+        margin: 2%;
+        img {
+            width: 100%;
         }
     }
-    .post-content{
-        width:100%;
-        text-align:left;
-        a{
-            display:none;
+    .post-content {
+        width: 100%;
+        text-align: left;
+        a {
+            display: none;
         }
     }
-
-    textarea{
-        width:98%;
-        resize:none;
-        border:none;
-
-        &:focus{
-            outline:none;
+    textarea {
+        width: 98%;
+        resize: none;
+        border: none;
+        &:focus {
+            outline: none;
         }
     }
-    .psuedo-textarea{   
-        
+    .psuedo-textarea {
         background: transparent;
-        
-        color:white;
-        
+        color: white;
     }
-    .psuedo-textarea-edit{
+    .psuedo-textarea-edit {
         background: white;
-        color:black;
+        color: black;
     }
-    .controls{
-        a{
-            color:$primary-color;
-            margin: 0.5%; 
+    .controls {
+        a {
+            color: $primary-color;
+            margin: 0.5%;
         }
         text-align:right;
         padding: 0.5%
     }
-    .info{
+    .info {
         font-style: italic;
-        font-size:0.8rem;
+        font-size: 0.8rem;
         padding: 1.5vh
     }
-
-    .modal-footer{
+    .modal-footer {
         background-color: $background-color
     }
-
-    
 }
-
 
 footer {
     background-color: #333;
@@ -688,10 +707,12 @@ footer {
     .parallax {
         display: none;
     }
+    .lead {
+        font-size: 1rem;
+    }
     form {
         .custom-input {
             margin: 0 auto;
-            padding: 2%;
         }
         p {
             display: none;
@@ -713,6 +734,9 @@ footer {
     h2 {
         margin: 0 auto;
     }
+    footer {
+        display: none;
+    }
 }
 
 @include media-breakpoint-down(xs) {
@@ -729,7 +753,15 @@ footer {
         margin: 2px;
     }
     .login-user {
-        display: none;
+        .btn {
+            font-size: 0.8rem;
+        }
+    }
+    .navbar-toggler {
+        font-size: 1rem;
+    }
+    .navbar-brand {
+        margin-right: 0px;
     }
     .show-on-mobile-only {
         display: block;
@@ -749,10 +781,14 @@ footer {
     .a-custom-nav-profile::before {
         content: '\f090';
     }
-    
-
     body {
         margin-bottom: 20%;
     }
+    footer {
+        display: block;
+    }
+    .navbar,
+    .navbar-expand-sm {
+        padding: 7px;
+    }
 }
-

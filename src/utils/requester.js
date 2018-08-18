@@ -40,6 +40,30 @@ let requester = {
       }
     ).then(data => data.json())
   },
+  banUser: (id)=>{
+    return fetch(
+      authData.BASE_URL + 'user/' + authData.APP_KEY +'/'+ id +'?soft=true',
+      {
+        method: 'DELETE',
+        headers: {
+          'Authorization': 'Kinvey ' + localStorage.getItem('authToken'),
+        },
+      }
+    )
+  },
+
+  restoreUser:(id)=>{
+    return fetch(
+      authData.BASE_URL + 'user/' + authData.APP_KEY +'/'+ id +'/_restore',
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Basic ' + btoa('kid_Bys2jjSNm' + ':' + '3cb812ca74604fe6a350cea44a2a0cef')
+        },
+      }
+    )
+  },
+
   fetchAllUsers: ()=>{
     return fetch(
       authData.BASE_URL + 'user/' + authData.APP_KEY ,
@@ -174,3 +198,5 @@ let requester = {
 }
 /* eslint-enable */
 export default requester
+
+// https://baas.kinvey.com/user/:APP_KEY/:id/_restore

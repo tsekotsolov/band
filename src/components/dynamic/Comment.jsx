@@ -5,6 +5,7 @@ import requester from '../../utils/requester'
 import observer from '../../utils/observer'
 import ModalDelete from '../common/ModalDelete'
 import Loading from '../../utils/Loading'
+import escapeHtml from '../../utils/escapeHtml'
 
 export default class Comment extends Component {
 
@@ -39,11 +40,12 @@ export default class Comment extends Component {
         event.target.style.color='green'
         event.target.style.border='green solid'
         button[0].classList.remove('disabled-button')
+
         
         this.setState({
           data:{
             author:localStorage.getItem('username'),
-            content:event.target.value,
+            content:escapeHtml(event.target.value),
             commentId:this.props._id          
           }
         })
@@ -81,9 +83,10 @@ export default class Comment extends Component {
     let button = document.querySelectorAll(`[data-id="${event.target.dataset.id}"]`)
     let data = {
       author:localStorage.getItem('username'),
-      content:textarea.value,
+      content:escapeHtml(textarea.value),
       postId:this.props.postId
     }
+    
     requester.editComment(this.props._id,data).then((response)=>{
 
     textarea.classList.remove('psuedo-textarea-edit')
@@ -91,6 +94,9 @@ export default class Comment extends Component {
     textarea.style.color='white'
     textarea.style.border='none'
     button[0].style.display='none'
+    let value = escapeHtml(textarea.value);
+    textarea.value=value
+
     })
     
    

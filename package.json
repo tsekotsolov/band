@@ -2,7 +2,7 @@
   "name": "band",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://tsekotsolov.github.io/band/",
+  "homepage":"http://band.unibox.bg",
   "dependencies": {
     "cloudinary-react": "^1.0.6",
     "gh-pages": "^1.2.0",
@@ -13,7 +13,7 @@
     "url-parse": "^1.4.3"
   },
   "scripts": {
-    "deploy":"npm run build&&gh-pages -d build",
+    "deploy":"npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
